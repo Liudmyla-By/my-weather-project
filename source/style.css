@@ -25,6 +25,14 @@ li {
     list-style: none;
 }
 
+.src-code {
+    color: rgb(130, 96, 96);
+}
+
+footer {
+    text-align: center;
+}
+
 .weather-app {
     border: 1px solid #dadde1;
     padding: 15px;
