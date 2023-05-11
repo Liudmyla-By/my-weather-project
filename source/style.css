@@ -1,3 +1,12 @@
+body {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: monospace;
+    color: rgb(80, 76, 76);
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
 }
