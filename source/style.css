@@ -51,7 +51,7 @@ footer {
     max-width: 600px;
 }
 
-.weather-icon {
+.weather-icon img {
     height: 64px;
     width: 64px;
     margin-right: 10px;
@@ -82,11 +82,6 @@ footer {
 }
 
 
-
-.icon {
-    font-size: 25px;
-}
-
 .row.forcast {
     margin: 100px 10px;
 }
@@ -97,6 +92,7 @@ footer {
 
 .icon {
     text-align: center;
+    font-size: 25px;
 }
 
 .day-tempo {
@@ -104,5 +100,5 @@ footer {
 }
 
 .main-icon {
-    width: 100px;
+    width: 120px;
 }
