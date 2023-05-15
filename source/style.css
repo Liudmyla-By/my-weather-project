@@ -63,6 +63,10 @@ footer {
     line-height: 1;
 }
 
+.over-view {
+    margin-bottom: 28px;
+}
+
 .units {
     position: relative;
     top: -34px;
@@ -97,6 +101,7 @@ footer {
 .day-tempo {
     text-align: center;
 }
+
 .main-icon {
     width: 100px;
 }
