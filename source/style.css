@@ -9,7 +9,7 @@ body {
 
 a {
     text-decoration: none;
-    color: black;
+
 }
 
 
@@ -58,8 +58,8 @@ footer {
 }
 
 .temperature {
-    color: rgb(33, 33, 33);
-    font-size: 45px;
+    color: rgb(80, 76, 76);
+    font-size: 55px;
     font-weight: 400;
     line-height: 1;
 }
@@ -101,4 +101,9 @@ footer {
 
 .main-icon {
     width: 120px;
+}
+
+.weather-temperature .active {
+    color: rgb(80, 76, 76);
+    cursor: default;
 }
