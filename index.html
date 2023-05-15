@@ -41,25 +41,27 @@
       </ul>
       <div class="row">
         <div class="col-6">
-          <img class="main-icon" src="https://cdn-icons-png.flaticon.com/512/6393/6393305.png" alt="Cloudy icon"
-            class="weather-icon float-left" />
-          <span class="temperature" id="temperature">25</span><span class="units">
-            <a href="#" id="celsius">°C</a> |
-            <a href="#" id="fahrenheit">°F</a>
-          </span>
+          <div class="d-flex weather-temperature">
+            <img class="main-icon" src="https://cdn-icons-png.flaticon.com/512/6393/6393305.png" alt="Clear"
+              id="icon" />
+            <div>
+              <span class="temperature" id="temperature">25</span><span class="units">
+                <a href="#" id="celsius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
+              </span>
+            </div>
+          </div>
         </div>
-
-
         <div class="col-6">
           <ul>
             <li>
-              Precipitation: <span id="precipitation">70</span>%</li>
+              Precipitation: <span id="precipitation"></span>%</li>
             </li>
             <li>
-              Humidity: <span id="humidity">70</span> %</li>
+              Humidity: <span id="humidity"></span> %</li>
             </li>
             <li>
-              Wind: <span id="wind">5</span> m/h</li>
+              Wind: <span id="wind"></span> m/h</li>
             </li>
           </ul>
         </div>
