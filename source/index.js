@@ -12,6 +12,8 @@ currentDate.innerHTML = `${day} ${hours}:${minutes}`;
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 }
 
 function search(city) {
@@ -59,3 +61,4 @@ function changingToFahrenheit(event) {
 }
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
+let iconElement = document.querySelector("#icon");
