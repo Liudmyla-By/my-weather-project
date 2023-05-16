@@ -1,7 +1,5 @@
 body {
-    background-image: url("images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+
     font-family: monospace;
     color: rgb(80, 76, 76);
     font-weight: bold;
@@ -45,10 +43,13 @@ footer {
 
 .weather-app {
     border: 1px solid #dadde1;
-    padding: 15px;
+    padding: 30px;
     margin: 20px auto;
     border-radius: 10px;
     max-width: 600px;
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .weather-icon img {
@@ -83,7 +84,11 @@ footer {
 
 
 .row.forcast {
-    margin: 100px 10px;
+    margin: 80px 0px;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    padding: 0;
+
 }
 
 .fa-sun {
