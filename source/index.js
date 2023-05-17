@@ -7,11 +7,13 @@ minutes = minutes <= 9 ? '0' + minutes : minutes;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForcast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -34,6 +36,13 @@ function displayForcast() {
 
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
@@ -49,11 +58,13 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
   let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -105,5 +116,4 @@ let celsiusTemperatura = null;
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
 
-displayForcast();
 search("Simferopol");
