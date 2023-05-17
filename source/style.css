@@ -93,13 +93,16 @@ button {
     display: block;
 }
 
-
-.row.forcast {
+.weather-forecast {
     margin: 80px 0px;
     background-color: rgba(255, 255, 255, 0.35);
     border-radius: 10px;
     padding: 0;
+    text-align: center;
+}
 
+.weather-fofcast-tempo-min {
+    opacity: 0.5;
 }
 
 .fa-sun {
@@ -111,9 +114,6 @@ button {
     font-size: 25px;
 }
 
-.day-tempo {
-    text-align: center;
-}
 
 .main-icon {
     width: 120px;

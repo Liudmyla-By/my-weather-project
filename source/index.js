@@ -79,3 +79,5 @@ let celsiusTemperatura = null;
 
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
+
+search("Simferopol");
