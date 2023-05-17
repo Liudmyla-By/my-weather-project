@@ -7,7 +7,32 @@ minutes = minutes <= 9 ? '0' + minutes : minutes;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForcast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+      <div class="weather-fofcast-date">${day}</div>
+<div class="icon">
+  <i class="fa-regular fa-sun"></i>
+</div>
+<div class="weather-fofcast-tempo">
+  <span class="weather-fofcast-tempo-max">23°</span>
+  <span class="weather-fofcast-tempo-min">17°</span>
+</div>
+</div>
+`;
+  })
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+
+
+}
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -80,4 +105,5 @@ let celsiusTemperatura = null;
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
 
+displayForcast();
 search("Simferopol");
