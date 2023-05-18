@@ -44,33 +44,33 @@ width = "50"/>
 
 function getForecast(coordinates) {
   let apiKey = "6023o651f6tfcb9ffa0c896e14d7ed9c";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 
 function showWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#city").innerHTML = response.data.city;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.temperature.current);
+  document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  document.querySelector("#description").innerHTML = response.data.condition.description;
 
-  celsiusTemperatura = response.data.main.temp;
+  celsiusTemperatura = response.data.temperature.current;
 
   let iconElement = document.querySelector("#icon")
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.condition.icon);
 
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
-  let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiKey = "6023o651f6tfcb9ffa0c896e14d7ed9c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=metric&key=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -84,8 +84,8 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", cityPrevent);
 
 function currentButton(position) {
-  let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "6023o651f6tfcb9ffa0c896e14d7ed9c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -122,4 +122,4 @@ let celsiusTemperatura = null;
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
 
-search("Lisbon");
+search("Simferopol");
