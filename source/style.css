@@ -1,6 +1,5 @@
 body {
-
-    font-family: monospace;
+    font-family: 'Josefin Sans', sans-serif;
     color: rgb(67, 60, 60);
     font-weight: bold;
     background: linear-gradient(178.6deg, rgb(232, 245, 253) 3.3%, rgb(252, 253, 255) 109.6%) no-repeat;
@@ -13,8 +12,8 @@ a {
 
 h1 {
     color: rgb(80, 76, 76);
-    font-size: 50px;
-    font-weight: 100;
+    font-size: 55px;
+    font-weight: 600;
     line-height: 28px;
     margin: 0;
 }
@@ -27,7 +26,7 @@ ul {
 li {
     color: rgb(80, 76, 76);
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 400;
     height: 19px;
     line-height: 1;
     list-style: none;
@@ -59,16 +58,17 @@ button {
 
 .temperature {
     color: rgb(80, 76, 76);
-    font-size: 60px;
-    font-weight: 400;
+    font-size: 65px;
+    font-weight: 300;
     line-height: 1;
 }
 
-
-
 .units {
     position: relative;
-    top: -34px;
+    top: -25px;
+    left: -10px;
+    font-size: 30px;
+    font-weight: 400;
 }
 
 .search-form {
@@ -103,10 +103,7 @@ button {
     width: 125px;
 }
 
-.weather-temperature .active {
-    color: rgb(80, 76, 76);
-    cursor: default;
-}
+
 
 .src-code {
     color: rgb(130, 96, 96);

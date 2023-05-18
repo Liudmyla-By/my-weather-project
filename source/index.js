@@ -56,7 +56,7 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.condition.description;
 
-  celsiusTemperatura = response.data.temperature.current;
+
 
   let iconElement = document.querySelector("#icon")
   iconElement.setAttribute(
@@ -97,29 +97,6 @@ function searchCurrentLocation(event) {
 let currentLocation = document.querySelector("button");
 currentLocation.addEventListener("click", searchCurrentLocation);
 
-function changingToCelsius(event) {
-  event.preventDefault();
-  temperatureCelsius.classList.add("active");
-  temperatureFahrenheit.classList.remove("active");
-  let tempoCelsius = document.querySelector("#temperature");
-  tempoCelsius.innerHTML = Math.round(celsiusTemperatura);
-}
-let temperatureCelsius = document.querySelector("#celsius");
-temperatureCelsius.addEventListener("click", changingToCelsius);
 
-
-function changingToFahrenheit(event) {
-  event.preventDefault();
-  let tempoElement = document.querySelector("#temperature");
-  temperatureCelsius.classList.remove("active");
-  temperatureFahrenheit.classList.add("active");
-  let tempoFahrenheit = (celsiusTemperatura * 9) / 5 + 32;
-  tempoElement.innerHTML = Math.round(tempoFahrenheit);
-
-}
-let celsiusTemperatura = null;
-
-let temperatureFahrenheit = document.querySelector("#fahrenheit");
-temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
 
 search("Simferopol");
