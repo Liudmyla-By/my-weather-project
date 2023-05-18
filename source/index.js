@@ -7,33 +7,39 @@ minutes = minutes <= 9 ? '0' + minutes : minutes;
 let currentDate = document.querySelector("#current-date");
 currentDate.innerHTML = `${day} ${hours}:${minutes}`;
 
+function formatDay(dateStamp) {
+  let date = new Date(dateStamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = date.getDay();
+  return days[day];
+}
+
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2">
-      <div class="weather-fofcast-date">${day}</div>
-<div class="icon">
-  <i class="fa-regular fa-sun"></i>
-</div>
+      <div class="weather-fofcast-date">${formatDay(forecastDay.time)}</div>
+<img clas="icon" src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
+width = "50"/>
 <div class="weather-fofcast-tempo">
-  <span class="weather-fofcast-tempo-max">23°</span>
-  <span class="weather-fofcast-tempo-min">17°</span>
+  <span class="weather-fofcast-tempo-max">${Math.round(forecastDay.temperature.maximum)}°</span>
+  <span class="weather-fofcast-tempo-min">${Math.round(forecastDay.temperature.minimum)}°</span>
 </div>
 </div>
 `;
+    }
   })
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-
-
 }
 
 function getForecast(coordinates) {

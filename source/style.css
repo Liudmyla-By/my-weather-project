@@ -11,7 +11,6 @@ a {
 
 }
 
-
 h1 {
     color: rgb(80, 76, 76);
     font-size: 40px;
@@ -32,10 +31,6 @@ li {
     height: 19px;
     line-height: 1;
     list-style: none;
-}
-
-.src-code {
-    color: rgb(130, 96, 96);
 }
 
 footer {
@@ -105,13 +100,11 @@ button {
     opacity: 0.5;
 }
 
-.fa-sun {
-    color: yellow;
-}
 
 .icon {
-    text-align: center;
-    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+    width: 10px;
 }
 
 
@@ -122,4 +115,8 @@ button {
 .weather-temperature .active {
     color: rgb(80, 76, 76);
     cursor: default;
+}
+
+.src-code {
+    color: rgb(130, 96, 96);
 }
