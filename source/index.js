@@ -38,10 +38,12 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(coordinates);
+  let apiKey = "6023o651f6tfcb9ffa0c896e14d7ed9c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -64,7 +66,7 @@ function showWeather(response) {
 
 function search(city) {
   let apiKey = "354998d4eaa98e68cffddb71ab23cd32";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -116,4 +118,4 @@ let celsiusTemperatura = null;
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", changingToFahrenheit);
 
-search("Simferopol");
+search("Lisbon");
