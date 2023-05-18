@@ -57,22 +57,14 @@ button {
     filter: drop-shadow(5px 5px 5px #837a8b);
 }
 
-.weather-icon img {
-    height: 64px;
-    width: 64px;
-    margin-right: 10px;
-}
-
 .temperature {
     color: rgb(80, 76, 76);
-    font-size: 55px;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
 }
 
-.over-view {
-    margin-bottom: 28px;
-}
+
 
 .units {
     position: relative;
@@ -89,7 +81,7 @@ button {
 }
 
 .weather-forecast {
-    margin: 80px 0px;
+    margin: 60px 0px;
     background-color: rgba(255, 255, 255, 0.35);
     border-radius: 10px;
     padding: 0;
@@ -107,9 +99,8 @@ button {
     width: 10px;
 }
 
-
 .main-icon {
-    width: 120px;
+    width: 125px;
 }
 
 .weather-temperature .active {
@@ -119,4 +110,15 @@ button {
 
 .src-code {
     color: rgb(130, 96, 96);
+}
+
+.weather-temperature {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.humWind {
+    margin-top: 37px;
+    margin-left: 10px;
 }

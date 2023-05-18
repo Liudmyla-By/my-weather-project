@@ -43,8 +43,6 @@ width = "50"/>
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
-  console.log(coordinates);
   let apiKey = "6023o651f6tfcb9ffa0c896e14d7ed9c";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
