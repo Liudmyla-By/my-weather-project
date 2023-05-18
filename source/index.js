@@ -29,7 +29,7 @@ function displayForecast(response) {
       <div class="col-2">
       <div class="weather-fofcast-date">${formatDay(forecastDay.time)}</div>
 <img clas="icon" src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
-width = "50"/>
+width = "55"/>
 <div class="weather-fofcast-tempo">
   <span class="weather-fofcast-tempo-max">${Math.round(forecastDay.temperature.maximum)}°</span>
   <span class="weather-fofcast-tempo-min">${Math.round(forecastDay.temperature.minimum)}°</span>
