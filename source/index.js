@@ -15,20 +15,17 @@ function formatDay(dateStamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
       <div class="col-2">
       <div class="weather-fofcast-date">${formatDay(forecastDay.time)}</div>
-<img clas="icon" src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
+<img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
 width = "65"/>
 <div class="weather-fofcast-tempo">
   <span class="weather-fofcast-tempo-max">${Math.round(forecastDay.temperature.maximum)}°</span>
@@ -48,23 +45,18 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.temperature.current);
   document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.condition.description;
-
-
-
   let iconElement = document.querySelector("#icon")
   iconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.icon);
-
   getForecast(response.data.coordinates);
 }
 
@@ -96,7 +88,5 @@ function searchCurrentLocation(event) {
 
 let currentLocation = document.querySelector("button");
 currentLocation.addEventListener("click", searchCurrentLocation);
-
-
 
 search("Simferopol");

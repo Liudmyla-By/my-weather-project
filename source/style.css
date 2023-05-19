@@ -7,7 +7,6 @@ body {
 
 a {
     text-decoration: none;
-
 }
 
 h1 {
@@ -15,7 +14,7 @@ h1 {
     font-size: 55px;
     font-weight: 600;
     line-height: 28px;
-    margin: 0;
+    margin-top: 20px;
 }
 
 ul {
@@ -32,16 +31,16 @@ li {
     list-style: none;
 }
 
-footer {
-    text-align: center;
-    font-size: smaller;
-}
-
 button {
     margin: 5px auto;
     border-color: 1px solid #b9cbe2;
     border-radius: 7px;
     filter: drop-shadow(5px 5px 5px #837a8b);
+}
+
+footer {
+    text-align: center;
+    font-size: smaller;
 }
 
 .weather-app {
@@ -56,23 +55,9 @@ button {
     filter: drop-shadow(5px 5px 5px #837a8b);
 }
 
-.temperature {
-    color: rgb(80, 76, 76);
-    font-size: 65px;
-    font-weight: 300;
-    line-height: 1;
-}
-
-.units {
-    position: relative;
-    top: -25px;
-    left: -10px;
-    font-size: 30px;
-    font-weight: 400;
-}
-
 .search-form {
     margin-bottom: 30px;
+    opacity: 0.7;
 }
 
 .loupe-img {
@@ -80,8 +65,38 @@ button {
     display: block;
 }
 
+.weather-temperature {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-icon {
+    width: 140px;
+}
+
+.temperature {
+    color: rgb(80, 76, 76);
+    font-size: 65px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.unit {
+    position: relative;
+    top: -25px;
+    left: -10px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.humidity-wind {
+    margin-top: 37px;
+    margin-left: 10px;
+}
+
 .weather-forecast {
-    margin: 60px 0px;
+    margin: 40px 0px;
     background-color: rgba(255, 255, 255, 0.35);
     border-radius: 10px;
     padding: 0;
@@ -92,30 +107,6 @@ button {
     opacity: 0.5;
 }
 
-
-.icon {
-    display: block;
-    margin: 0 auto;
-    width: 10px;
-}
-
-.main-icon {
-    width: 125px;
-}
-
-
-
 .src-code {
     color: rgb(130, 96, 96);
-}
-
-.weather-temperature {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.humWind {
-    margin-top: 37px;
-    margin-left: 10px;
 }

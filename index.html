@@ -8,10 +8,10 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/9d31524c13.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   <link rel="stylesheet" href="source/style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
@@ -23,7 +23,7 @@
       <form class="search-form" id="search-form">
         <div class="row">
           <div class="col-8">
-            <input type="text" class="form-control" placeholder="Enter a city..." id="search-input">
+            <input type="text" class="form-control" placeholder="Enter a city..." id="search-input" autocomplete="off">
           </div>
           <div class="col-1">
             <input type="image" src="source/images/loupe.png" class="loupe-img" />
@@ -33,29 +33,27 @@
           </div>
         </div>
       </form>
-      <div class="over-view">
-        <h1 id="city"></h1>
-        </br>
-        <ul>
-          <li id="current-date"></li>
-          <li id="description"></li>
-        </ul>
-      </div>
+      <h1 id="city"></h1>
+      </br>
+      <ul>
+        <li id="current-date"></li>
+        <li id="description"></li>
+      </ul>
       <div class="row">
         <div class="col-6">
           <div class="flexbox weather-temperature">
             <img class="main-icon" src="#" alt="weather-icon" id="icon" />
             <strong class="temperature" id="temperature"></strong>
-            <span class="units">°C</span>
+            <span class="unit">°C</span>
           </div>
         </div>
         <div class="col-6">
-          <ul class="humWind">
+          <ul class="humidity-wind">
             <li>
               Humidity: <span id="humidity"></span> %</li>
             </li>
             <li>
-              Wind: <span id="wind"></span> m/h</li>
+              Wind: <span id="wind"></span> m/s</li>
             </li>
           </ul>
         </div>
@@ -63,13 +61,11 @@
       </div>
     </div>
   </div>
-
   <footer>
     <a class="src-code" href="https://github.com/Liudmyla-By/my-weather-project">Open-source code</a>, by Liudmyla
     Bykadorova
   </footer>
   <script src="source/index.js"></script>
-
 </body>
 
 </html>
