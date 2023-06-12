@@ -87,6 +87,6 @@ function searchCurrentLocation(event) {
 }
 
 let currentLocation = document.querySelector("button");
-currentLocation.addEventListener("click", searchCurrentLocation);
+currentLocation.addEventListener("click", "touchstart", searchCurrentLocation);
 
 search("Simferopol");
