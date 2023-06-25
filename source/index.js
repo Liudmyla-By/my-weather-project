@@ -86,7 +86,7 @@ function searchCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(currentButton);
 }
 
-let currentLocation = document.querySelector("button");
+let currentLocation = document.querySelector("#button");
 currentLocation.addEventListener("click", searchCurrentLocation);
 ontouchstart = searchCurrentLocation;
 
